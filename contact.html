@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Syntegra Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="contact-page">
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo-group">
+                    <img src="img/Logo_sws-removebg-preview.png" 
+                         style="max-height: 50px;"
+                         alt="Logo SYNTEGRA SERVICES">
+                    <a href="index.html" class="logo">SYNTEGRA SERVICES</a>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Halaman Utama</a></li>
+                    <li><a href="index.html#layanan">Layanan</a></li>
+                    <li><a href="index.html#galeri">Galeri</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Halaman Utama</a>
+        <a href="index.html#layanan">Layanan</a>
+        <a href="index.html#galeri">Galeri</a>
+        <a href="contact.html">Kontak</a>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+            <h1>Hubungi Kami</h1>
+            <p class="hero-subtitle">Kami siap membantu Anda. Temukan lokasi kami, ajukan pertanyaan, atau bergabunglah dengan tim kami.</p>
+            </div>
+        </section>
+
+        <section id="info-maps-section" class="content-section">
+            <div class="container">
+                <div class="info-maps-grid">
+                    <div class="contact-details">
+                        <h2>Informasi Kontak</h2>
+                        <p>Jangan ragu untuk menghubungi kami melalui detail di bawah ini atau kunjungi kantor kami.</p>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Alamat Kantor</strong>
+                                <p>Komp. Ruko BSD Sektor VII, Jl. Pahlawan Seribu No.63 - 64 Blok RN, WetanTangerang, Kec. Serpong, Kota Tangerang Selatan, Banten 15310, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Telepon Kantor</strong>
+                                <p>0800-1778889</p> </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>ho@syntegra-services.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Jam Operasional</strong>
+                                <p>Senin - Jumat: 09:00 - 18:00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.514903242397!2d106.6586973301343!3d-6.282209148711311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb007c4c226f%3A0xb50ed5c26715e82b!2sSyntegra%20Services!5e1!3m2!1sid!2snl!4v1755836599122!5m2!1sid!2snl"
+                            width="600"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="form-section" class="content-section">
+            <div class="container">
+                <div class="form-container-wrapper">
+                    <h2>Kirim Pesan</h2>
+                    
+                    <div class="form-tabs">
+                        <button class="tab-button active" data-form="tanya">
+                            <i class="fas fa-question-circle"></i> Ajukan Pertanyaan
+                        </button>
+                        <!-- <button class="tab-button" data-form="karir">
+                            <i class="fas fa-briefcase"></i> Lamar Pekerjaan
+                        </button> -->
+                    </div>
+
+                    <div class="form-content-wrapper">
+                        
+                        <div id="tanya-form" class="form-container active">
+                            <form action="mailto:ho@syntegra-services.com" method="post" enctype="text/plain">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <input type="text" id="nama-tanya" name="Nama" required>
+                                        <label for="nama-tanya">Nama Lengkap</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" id="email-tanya" name="Email" required>
+                                        <label for="email-tanya">Alamat Email</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="subjek-tanya" name="Subjek" required>
+                                    <label for="subjek-tanya">Subjek Pertanyaan</label>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="pesan-tanya" name="Pesan" rows="5" required></textarea>
+                                    <label for="pesan-tanya">Pesan Anda</label>
+                                </div>
+                                <button type="submit" class="btn-submit">Kirim Pertanyaan <i class="fas fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+
+                        <!-- <div id="karir-form" class="form-container">
+                             <form action="[URL_SKRIP_BACKEND_ANDA]" method="post" enctype="multipart/form-data">
+                                <h4>Data Diri Pelamar</h4>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <input type="text" id="nama-lamaran" name="nama_lengkap" required>
+                                        <label for="nama-lamaran">Nama Lengkap</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" id="email-lamaran" name="email" required>
+                                        <label for="email-lamaran">Alamat Email</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="tel" id="telepon-lamaran" name="telepon" required>
+                                        <label for="telepon-lamaran">No. Telepon Aktif</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <select id="posisi-dilamar" name="posisi" required>
+                                            <option value="" disabled selected>Pilih Posisi yang Dilamar</option>
+                                            <option value="Security">Anggota Security</option>
+                                            <option value="Labour Supply">Labour Supply</option>
+                                            <option value="Cleaning Service">Cleaning Service</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <h4>Pengalaman & Dokumen</h4>
+                                <div class="form-group">
+                                    <textarea id="pengalaman" name="pengalaman" rows="5" placeholder="Jelaskan pengalaman kerja relevan Anda di sini..."></textarea>
+                                </div>
+                                <label for="cv-upload">Unggah CV (PDF, DOC, DOCX, maks. 5MB)</label>
+                                <div class="form-group file-upload-group">
+                                    <input type="file" id="cv-upload" name="cv_file" accept=".pdf,.doc,.docx" required>
+                                </div>
+                                <button type="submit" class="btn-submit">Kirim Lamaran <i class="fas fa-rocket"></i></button>
+                            </form>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontak Footer -->
+        <div class="contact-section-tech">
+            <div class="contact-left">
+                <h2>Get in Touch</h2>
+                <p class="contact-subtitle">Kami siap membantu mewujudkan lingkungan yang aman dan produktif untuk Anda.</p>
+                
+                <div class="contact-info-group">
+                    <h4><i class="fas fa-map-marker-alt"></i> Alamat Kantor</h4>
+                    <p>Komp. Ruko BSD Sektor VII, Jl. Pahlawan Seribu No.63 - 64 Blok RN, Kec. Serpong, Kota Tangerang Selatan, Banten 15310</p>
+                </div>
+                
+                <div class="contact-info-group">
+                    <h4><i class="fas fa-phone-alt"></i> Telepon Bebas Pulsa</h4>
+                    <p>0800-1-778889</p>
+                </div>
+
+                <div class="contact-info-group">
+                    <h4><i class="fas fa-envelope"></i> Email Utama</h4>
+                    <p>ho@syntegra-services.com</p>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <a href="tel:+628001778889" class="contact-action-card">
+                    <i class="fas fa-phone-volume"></i>
+                    <span>Call Us Now</span>
+                </a>
+                <a href="https://wa.me/+6289631174455" class="contact-action-card" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Chat on WhatsApp</span>
+                </a>
+                <a href="mailto:ho@syntegra-services.com" class="contact-action-card">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send an Email</span>
+                </a>
+
+                <div class="services-links">
+                    <h4>Layanan Kami</h4>
+                    <ul>
+                        <li><a href="services.html#security">Layanan Keamanan</a></li>
+                        <li><a href="services.html#labour">Penyedia Tenaga Kerja</a></li>
+                        <li><a href="services.html#cleaning">Layanan Kebersihan</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <button id="backToTopBtn" title="Kembali ke atas">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SYNTEGRA SERVICES.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
