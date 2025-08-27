@@ -1027,7 +1027,7 @@ footer {
 }
 .service-image img {
     width: 100%;
-    height: 160%;
+    height: 180%;
     object-fit: cover;
 }
 .service-details h2 {
@@ -1382,7 +1382,7 @@ footer {
     .service-nav-sticky .nav-link::before { display: none; }
     .service-content-scroll { padding-bottom: 20px; }
     .service-section { min-height: auto; margin-bottom: 4rem; padding-right:18px; }
-    .service-image { height: 250px; max-width: 350%; }
+    .service-image { height: 250px; max-width: 280%; }
     .service-details h2 { font-size: 2.2rem; }
     .contact-section-tech { grid-template-columns: 1fr; padding: 2.5rem; }
 }
@@ -1454,6 +1454,8 @@ footer {
     .vmg-tab { justify-content: center; }
     .vmg-panel h3 { font-size: 1.5rem; }
     .vmg-panel p { font-size: 1rem; }
+
+    .service-image { height: 240px; max-width: 280%; }
     
     .info-maps-grid { grid-template-columns: 1fr; }
     .map-container { height: 350px; }
