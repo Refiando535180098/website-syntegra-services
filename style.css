@@ -3,7 +3,7 @@
 /* -- Gaya Umum & Variabel Root -- */
 :root {
     --primary-color: #ffea00;
-    --secondary-color: #c09b06;
+    --secondary-color: #dab315;
     --third-color: #6200ff;
     --fourth-color: #22e2ff;
     --dark-color: #222;
@@ -78,7 +78,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: rgb(70, 70, 70);
+    color: rgb(0, 0, 0);
     font-weight: 600;
     position: relative;
     padding-bottom: 5px;
@@ -205,8 +205,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(117, 105, 1, 0.537), rgba(226, 196, 1, 0.74));
-    z-index: 1;
+    background: linear-gradient(to bottom, rgba(255, 242, 0, 0.836), rgba(0, 0, 0, 0.348));
+    z-index: 1; /* Untuk memastikan overlay berada di atas gambar */
 }
 
 .hero-content {
@@ -280,7 +280,7 @@ body {
 }
 
 #button-tentang:hover {
-    background-color: #b19318;
+    background-color: #fff200ea;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
@@ -1373,7 +1373,7 @@ footer {
         color: var(--color-black);
     }
     .service-nav-sticky .nav-link.active {
-        background-color: var(--color-gold, #e7cd0c);
+        background-color: var(--primary-color);
         color: var(--color-black, #1a1a1a);
         border-color: transparent;
         box-shadow: 0 4px 12px rgba(205, 198, 3, 0.382);
@@ -1381,18 +1381,18 @@ footer {
     }
     .service-nav-sticky .nav-link::before { display: none; }
     .service-content-scroll { padding-bottom: 20px; }
-    .service-section { min-height: auto; margin-bottom: 4rem; }
-    .service-image { height: 250px; }
+    .service-section { min-height: auto; margin-bottom: 4rem; padding-right:18px; }
+    .service-image { height: 250px; max-width: 350%; }
     .service-details h2 { font-size: 2.2rem; }
     .contact-section-tech { grid-template-columns: 1fr; padding: 2.5rem; }
 }
 
 
 /* --- Mobile (max-width: 768px) --- */
-@media (max-width: 768px) {
+@media (max-width: 758px) {
     /* **PERBAIKAN NAVBAR MOBILE** */
     .navbar .container {
-        padding: 0 20px; /* Beri jarak aman di sisi */
+        padding: 0 5px; /* Beri jarak aman di sisi */
     }
     .nav-links { display: none; }
     .menu-toggle { display: flex; }
@@ -1400,7 +1400,7 @@ footer {
     /* **KONTEN TENGAH & LEBIH EYE-CATCHING** */
     .hero {
         padding: 6rem 0;
-        min-height: 400px;
+        min-height: 100px;
         /* Lengkungan lebih halus di mobile */
         border-bottom-left-radius: 30% 20px;
         border-bottom-right-radius: 30% 20px;
@@ -1422,7 +1422,7 @@ footer {
         gap: 30px;
     }
     .tentang-text p {
-        text-align: center; /* Ubah dari justify ke center agar rapi */
+        text-align: center; /* Pusatkan teks di dalam paragraf */
     }
     
     .about-page .about-story {
