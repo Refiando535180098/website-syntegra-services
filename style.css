@@ -1018,6 +1018,7 @@ footer {
     flex-direction: column;
     gap: 2rem;
 }
+
 .service-image {
     width: 100%;
     height: 400px;
