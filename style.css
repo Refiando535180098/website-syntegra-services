@@ -450,17 +450,17 @@ body {
 
 .logo-slide-track {
     display: flex;
-    width: calc(250px * 24);
+    width: calc(250px * 30);
     animation: scroll 30s linear infinite;
 }
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-250px * 24)); }
+    100% { transform: translateX(calc(-250px * 30)); }
 }
 
 .slide {
-    height: 100px;
+    height: 150px;
     width: 250px;
     display: flex;
     align-items: center;
