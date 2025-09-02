@@ -334,7 +334,7 @@ body {
 
 /* -- Bagian Layanan -- */
 .services-section {
-    background-image: linear-gradient(to bottom, rgba(185, 157, 0, 0.671), rgba(254, 195, 0, 0.89)), url('https://jurnalsecurity.com/go/wp-content/uploads/2024/03/satpam-baris.jpg');
+    background-image: linear-gradient(to bottom, rgba(251, 255, 4, 0.745), rgba(72, 72, 72, 0.653)), url('https://jurnalsecurity.com/go/wp-content/uploads/2024/03/satpam-baris.jpg');
     padding: 6rem 0;
     background-size: cover;
     background-position: center;
@@ -450,13 +450,13 @@ body {
 
 .logo-slide-track {
     display: flex;
-    width: calc(250px * 12);
+    width: calc(250px * 24);
     animation: scroll 30s linear infinite;
 }
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-250px * 6)); }
+    100% { transform: translateX(calc(-250px * 24)); }
 }
 
 .slide {
