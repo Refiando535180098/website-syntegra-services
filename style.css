@@ -643,7 +643,7 @@ body {
     position: fixed; 
     bottom: 20px;
     right: 20px;
-    background-color: yellow; 
+    background-color: var(--secondary-color); 
     color: black;
     border: none;
     border-radius: 50%;
@@ -1021,14 +1021,14 @@ footer {
 
 .service-image {
     width: 100%;
-    height: 400px;
+    height: 500px;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 .service-image img {
     width: 100%;
-    height: 180%;
+    height: 100%;
     object-fit: cover;
 }
 .service-details h2 {
