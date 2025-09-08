@@ -113,13 +113,16 @@
         <section id="form-section" class="content-section">
             <div class="container">
                 <div class="form-container-wrapper">
-                    <h2>Kirim Pesan</h2>
+                    <h2>Kirim Pesan atau Lamaran</h2>
                     
                     <div class="form-tabs">
                         <button class="tab-button active" data-form="tanya">
                             <i class="fas fa-question-circle"></i> Ajukan Pertanyaan
                         </button>
-                        </div>
+                        <button class="tab-button" data-form="karir">
+                            <i class="fas fa-briefcase"></i> Bergabung dengan Tim Kami
+                        </button>
+                    </div>
 
                     <div class="form-content-wrapper">
                         <div id="tanya-form" class="form-container active">
@@ -146,7 +149,100 @@
                             </form>
                         </div>
 
+                        <div id="karir-form" class="form-container">
+                            <p style="text-align: center; margin-bottom: 20px;">Lengkapi data di bawah ini untuk mengajukan lamaran pekerjaan.</p>
+                            <form action="mailto:hrd@syntegra-services.com" method="post" enctype="multipart/form-data">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <input type="text" id="nama-karir" name="Nama Lengkap" required>
+                                        <label for="nama-karir">Nama Lengkap</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="ktp-karir" name="No. KTP" required>
+                                        <label for="ktp-karir">No. KTP</label>
+                                    </div>
+                                </div>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <input type="email" id="email-karir" name="Email" required>
+                                        <label for="email-karir">Alamat Email</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="tel" id="telepon-karir" name="No. Telepon Aktif" required>
+                                        <label for="telepon-karir">No. Telepon (WhatsApp)</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="alamat-karir" name="Alamat Lengkap" rows="3" required></textarea>
+                                    <label for="alamat-karir">Alamat Lengkap (sesuai KTP)</label>
+                                </div>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <select id="posisi-karir" name="Posisi yang Dilamar" required>
+                                            <option value="" disabled selected>Pilih Posisi...</option>
+                                            <option value="Security">Security / Satuan Pengamanan</option>
+                                            <option value="Labour Supply">Labour Supply / Tenaga Kerja</option>
+                                            <option value="Cleaning Service">Cleaning Service</option>
+                                        </select>
+                                        <label for="posisi-karir" class="label-select">Posisi yang Dilamar</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <select id="pendidikan-karir" name="Pendidikan Terakhir" required>
+                                            <option value="" disabled selected>Pilih Pendidikan...</option>
+                                            <option value="SMA/SMK Sederajat">SMA/SMK Sederajat</option>
+                                            <option value="D3">Diploma (D3)</option>
+                                            <option value="S1">Sarjana (S1)</option>
+                                            <option value="Lainnya">Lainnya</option>
+                                        </select>
+                                        <label for="pendidikan-karir" class="label-select">Pendidikan Terakhir</label>
+                                    </div>
+                                </div>
+                                
+                                <fieldset class="form-fieldset">
+                                    <legend>Persyaratan Fisik (Wajib diisi pelamar Security)</legend>
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <input type="number" id="tinggi-karir" name="Tinggi Badan (cm)">
+                                            <label for="tinggi-karir">Tinggi Badan (cm)</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" id="berat-karir" name="Berat Badan (kg)">
+                                            <label for="berat-karir">Berat Badan (kg)</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <select id="gada-pratama" name="Sertifikat Gada Pratama">
+                                                <option value="" disabled selected>Pilih Status...</option>
+                                                <option value="Punya">Punya</option>
+                                                <option value="Tidak Punya">Tidak Punya</option>
+                                            </select>
+                                            <label for="gada-pratama" class="label-select">Sertifikat Gada Pratama</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <div class="form-group">
+                                    <textarea id="pengalaman-karir" name="Pengalaman Kerja" rows="4" required></textarea>
+                                    <label for="pengalaman-karir">Ringkasan Pengalaman Kerja</label>
+                                </div>
+
+                                <fieldset class="form-fieldset">
+                                    <legend>Unggah Dokumen (Maks. 2MB per file)</legend>
+                                    <div class="form-grid-upload">
+                                        <div class="form-group-file">
+                                            <label for="cv-upload">Curriculum Vitae (CV) (.pdf)</label>
+                                            <input type="file" id="cv-upload" name="CV" accept=".pdf" required>
+                                        </div>
+                                        <div class="form-group-file">
+                                            <label for="foto-upload">Foto Terbaru (.jpg, .png)</label>
+                                            <input type="file" id="foto-upload" name="Foto" accept=".jpg,.jpeg,.png" required>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <button type="submit" class="btn-submit">Kirim Lamaran <i class="fas fa-paper-plane"></i></button>
+                            </form>
                         </div>
+                    </div>
                 </div>
             </div>
         </section>

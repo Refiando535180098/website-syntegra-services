@@ -184,6 +184,28 @@ document.addEventListener('DOMContentLoaded', function() {
 // dengan cara mengecek keberadaan elemen unik dari halaman tersebut.
 const contactFormSection = document.getElementById('form-section');
 
+document.addEventListener('DOMContentLoaded', function () {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const formContainers = document.querySelectorAll('.form-container');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Hapus kelas 'active' dari semua tombol dan form
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            formContainers.forEach(form => form.classList.remove('active'));
+
+            // Tambahkan kelas 'active' ke tombol yang diklik
+            button.classList.add('active');
+
+            // Tampilkan form yang sesuai
+            const formId = button.getAttribute('data-form');
+            const targetForm = document.getElementById(formId + '-form');
+            if (targetForm) {
+                targetForm.classList.add('active');
+            }
+        });
+    })});
+
 if (contactFormSection) {
     
     // --- 3.1 Logika untuk Tab Formulir (Pertanyaan & Karir) ---
@@ -228,4 +250,16 @@ if (contactFormSection) {
             }
         });
     });
+
+    const allFieldsets = document.querySelectorAll('.form-fieldset');
+    allFieldsets.forEach(fieldset => {
+        const legend = fieldset.querySelector('legend');
+        if (legend) {
+            legend.addEventListener('click', () => {
+                fieldset.classList.toggle('collapsed');
+            });
+        }
+    });
+    
 }
+

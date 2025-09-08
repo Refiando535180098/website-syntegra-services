@@ -1313,7 +1313,7 @@ footer {
     margin: 2rem auto 0 auto;
 }
 .btn-submit:hover {
-    background-color: #ffeb3b;
+    background-color: #D4AF37;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
     transform: translateY(-5px);
 }
@@ -1388,6 +1388,48 @@ footer {
     .contact-section-tech { grid-template-columns: 1fr; padding: 2.5rem; }
 }
 
+.form-fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.form-fieldset legend {
+    padding: 0 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group-file {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-file label {
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.form-grid-upload {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Untuk membuat label select tetap terlihat */
+.form-group select {
+    color: #333; /* Pastikan teks terlihat */
+}
+
+label.label-select {
+    position: absolute;
+    top: -10px;
+    padding: 0 5px;
+    font-size: 0.8em;
+    color: #D4AF37;
+}
 
 /* --- Mobile (max-width: 768px) --- */
 @media (max-width: 758px) {
