@@ -9,13 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuToggle && sidebar) {
         const sidebarLinks = document.querySelectorAll('.sidebar a');
         
-        // Buka/Tutup sidebar saat tombol hamburger di-klik
         menuToggle.addEventListener('click', function() {
             menuToggle.classList.toggle('active');
             sidebar.classList.toggle('active');
         });
 
-        // Tutup sidebar saat salah satu link di dalamnya di-klik
         sidebarLinks.forEach(link => {
             link.addEventListener('click', function() {
                 menuToggle.classList.remove('active');
@@ -26,10 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 1.2 Inisialisasi Swiper.js (Carousel)
     if (document.querySelector('.mySwiper')) {
-        const swiper = new Swiper('.mySwiper', {
+        new Swiper('.mySwiper', {
             loop: true,
             autoplay: {
-                delay: 1500,
+                delay: 2500, // Sedikit diperlambat agar lebih nyaman dilihat
                 disableOnInteraction: false,
             },
             pagination: {
@@ -39,10 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 1.3 Kode untuk Smooth Scrolling
+    // 1.3 Kode untuk Smooth Scrolling ke anchor link
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            // Cek jika href bukan link kosong '#' agar tidak error
             if (this.getAttribute('href').length > 1) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -55,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1.4 Tombol "Back to Top"
     const backToTopButton = document.getElementById("backToTopBtn");
     if (backToTopButton) {
-        // Tampilkan tombol ketika pengguna scroll ke bawah
         window.onscroll = function() {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
                 backToTopButton.classList.add("show");
@@ -64,25 +60,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        // Ketika tombol diklik, scroll kembali ke puncak
         backToTopButton.addEventListener("click", function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
-
-    // --- BAGIAN 2: KODE KHUSUS HALAMAN LAYANAN ---
-    
-    // 2.1 Navigasi Sticky pada Halaman Layanan
+    // --- BAGIAN 2: KODE KHUSUS HALAMAN LAYANAN (jika ada .service-nav-sticky) ---
     const serviceNav = document.querySelector('.service-nav-sticky');
     if (serviceNav) {
+        // Kode ini akan berjalan hanya jika elemen .service-nav-sticky ditemukan
         const serviceSections = document.querySelectorAll('.service-section');
         const serviceNavLinks = serviceNav.querySelectorAll('.nav-link');
-
-        if (serviceSections.length > 0 && serviceNavLinks.length > 0) {
+        
+        if (serviceSections.length > 0) {
             const observerOptions = {
                 rootMargin: '-80px 0px -50% 0px',
                 threshold: 0
@@ -102,70 +92,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }, observerOptions);
 
-            serviceSections.forEach(section => {
-                serviceObserver.observe(section);
-            });
+            serviceSections.forEach(section => serviceObserver.observe(section));
         }
     }
 
-
-    // --- BAGIAN 3: KODE KHUSUS HALAMAN KONTAK ---
-
-    // Cek apakah kita berada di halaman kontak dengan mencari elemen uniknya
+    // --- BAGIAN 3: KODE KHUSUS HALAMAN KONTAK (jika ada #form-section) ---
     const contactFormSection = document.getElementById('form-section');
     if (contactFormSection) {
         
-        // 3.1 Efek Transisi saat Scroll di Halaman Kontak
-        const contactSections = document.querySelectorAll('.contact-page section'); // Lebih spesifik
-        const contactObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        contactSections.forEach(section => {
-            contactObserver.observe(section);
-        });
-
-        // 3.2 Logika Tab untuk Formulir
+        // 3.1 Logika Tab untuk Formulir (Pertanyaan & Karir)
         const tabButtons = document.querySelectorAll('.tab-button');
         const formContainers = document.querySelectorAll('.form-container');
-        if (tabButtons.length > 0) {
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const formId = button.dataset.form;
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    formContainers.forEach(form => {
-                        form.classList.toggle('active', form.id === `${formId}-form`);
-                    });
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const formId = button.dataset.form;
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                formContainers.forEach(form => {
+                    form.classList.toggle('active', form.id === `${formId}-form`);
                 });
             });
-        }
+        });
 
-        // 3.3 Logika Form Lamaran Kerja Dinamis
-        const posisiSelect = document.getElementById('posisi-dilamar');
-        if (posisiSelect) {
-            const securityFields = document.getElementById('security-fields');
-            const cleaningFields = document.getElementById('cleaning-fields');
-            const labourFields = document.getElementById('labour-fields');
-
-            posisiSelect.addEventListener('change', () => {
-                securityFields.style.display = 'none';
-                cleaningFields.style.display = 'none';
-                labourFields.style.display = 'none';
-                const selectedPosition = posisiSelect.value;
-                if (selectedPosition === 'Security') securityFields.style.display = 'block';
-                else if (selectedPosition === 'Cleaning Service') cleaningFields.style.display = 'block';
-                else if (selectedPosition === 'Labour Supply') labourFields.style.display = 'block';
-            });
-        }
-
-        // 3.4 Logika untuk Direct Link ke Form
+        // 3.2 Logika untuk membuka tab form tertentu via URL (misal: contact.html?form=karir)
         const urlParams = new URLSearchParams(window.location.search);
         const directForm = urlParams.get('form');
         if (directForm) {
@@ -175,91 +124,85 @@ document.addEventListener('DOMContentLoaded', function() {
                 targetFormButton.click();
             }
         }
+        
+        // 3.3 Logika untuk Form Lamaran Kerja yang terhubung ke Google Sheet & Drive
+        const formLamaran = document.getElementById('form-lamaran-kerja');
+        if (formLamaran) {
+            const submitButton = formLamaran.querySelector('button[type="submit"]');
+            const cvInput = document.getElementById('cv-upload');
+            const fotoInput = document.getElementById('foto-upload');
+            // Pastikan semua variabel dari HTML sesuai
+            // ID input sudah cocok: 'cv-upload', 'foto-upload'
+
+            const originalButtonText = submitButton.innerHTML;
+
+            // Helper function untuk membaca file sebagai Base64
+            function readFileAsBase64(file) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve(reader.result.split(',')[1]);
+                    reader.onerror = (error) => reject(error);
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            formLamaran.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                // Validasi: Pastikan kedua file diunggah
+                if (!cvInput.files[0] || !fotoInput.files[0]) {
+                    alert('Mohon unggah file CV dan Foto.');
+                    return;
+                }
+
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+
+                try {
+                    const [cvFileData, photoFileData] = await Promise.all([
+                        readFileAsBase64(cvInput.files[0]),
+                        readFileAsBase64(fotoInput.files[0])
+                    ]);
+
+                    const formDataObject = {};
+                    new FormData(formLamaran).forEach((value, key) => {
+                        if (key !== 'CV' && key !== 'Foto') {
+                            formDataObject[key] = value;
+                        }
+                    });
+
+                    const payload = {
+                        cvFileName: cvInput.files[0].name,
+                        cvMimeType: cvInput.files[0].type,
+                        cvFileData: cvFileData,
+                        photoFileName: fotoInput.files[0].name,
+                        photoMimeType: fotoInput.files[0].type,
+                        photoFileData: photoFileData,
+                        formData: formDataObject
+                    };
+
+                    // URL Google Apps Script Anda
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbws2XhLNyUceejdlG1Wn_FRxQoW5gISsbuM8M-kfv6Yc-15IixnNWayA8e7NEpRJMUJ/exec';
+
+                    const response = await fetch(scriptURL, {
+                        method: 'POST',
+                        body: JSON.stringify(payload),
+                        headers: { 'Content-Type': 'text/plain;charset=utf-8' }
+                    });
+
+                    const result = await response.json();
+                    console.log('Success!', result);
+                    alert('Terima kasih! Lamaran Anda telah berhasil dikirim.');
+                    formLamaran.reset();
+
+                } catch (error) {
+                    console.error('Error!', error.message);
+                    alert('Maaf, terjadi kesalahan. Pastikan ukuran file tidak terlalu besar.');
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
+                }
+            });
+        }
     }
 });
-
-// --- BAGIAN 3: KODE KHUSUS HALAMAN KONTAK ---
-
-// Pastikan kode ini hanya berjalan jika kita berada di halaman kontak
-// dengan cara mengecek keberadaan elemen unik dari halaman tersebut.
-const contactFormSection = document.getElementById('form-section');
-
-document.addEventListener('DOMContentLoaded', function () {
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const formContainers = document.querySelectorAll('.form-container');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Hapus kelas 'active' dari semua tombol dan form
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            formContainers.forEach(form => form.classList.remove('active'));
-
-            // Tambahkan kelas 'active' ke tombol yang diklik
-            button.classList.add('active');
-
-            // Tampilkan form yang sesuai
-            const formId = button.getAttribute('data-form');
-            const targetForm = document.getElementById(formId + '-form');
-            if (targetForm) {
-                targetForm.classList.add('active');
-            }
-        });
-    })});
-
-if (contactFormSection) {
-    
-    // --- 3.1 Logika untuk Tab Formulir (Pertanyaan & Karir) ---
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const formContainers = document.querySelectorAll('.form-container');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetFormId = button.dataset.form; // Mengambil data-form dari tombol
-
-            // 1. Hapus kelas 'active' dari semua tombol
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            // 2. Tambahkan kelas 'active' ke tombol yang diklik
-            button.classList.add('active');
-
-            // 3. Sembunyikan semua kontainer form
-            formContainers.forEach(form => {
-                form.classList.remove('active');
-            });
-
-            // 4. Tampilkan kontainer form yang sesuai dengan tombol yang diklik
-            const targetForm = document.getElementById(targetFormId + '-form');
-            if (targetForm) {
-                targetForm.classList.add('active');
-            }
-        });
-    });
-
-    // --- 3.2 Efek Label Melayang pada Input yang sudah terisi saat halaman dimuat ---
-    // Ini berguna jika browser melakukan autofill
-    const allInputs = document.querySelectorAll('.form-group input, .form-group textarea');
-    allInputs.forEach(input => {
-        // Jika input punya nilai, tambahkan 'valid' agar labelnya tetap di atas
-        if (input.value.trim() !== '') {
-            input.nextElementSibling.classList.add('label-up');
-        }
-        input.addEventListener('blur', () => {
-             if (input.value.trim() !== '') {
-                input.nextElementSibling.classList.add('label-up');
-            } else {
-                input.nextElementSibling.classList.remove('label-up');
-            }
-        });
-    });
-
-    const allFieldsets = document.querySelectorAll('.form-fieldset');
-    allFieldsets.forEach(fieldset => {
-        const legend = fieldset.querySelector('legend');
-        if (legend) {
-            legend.addEventListener('click', () => {
-                fieldset.classList.toggle('collapsed');
-            });
-        }
-    });
-    
-}
-

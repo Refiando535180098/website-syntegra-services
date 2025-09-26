@@ -1398,7 +1398,7 @@ footer {
 .form-fieldset legend {
     padding: 0 10px;
     font-weight: 600;
-    color: #333;
+    color: #f0f0f0;
 }
 
 .form-group-file {
@@ -1409,7 +1409,7 @@ footer {
 .form-group-file label {
     margin-bottom: 8px;
     font-size: 0.9em;
-    color: #555;
+    color: #f0f0f0;
 }
 
 .form-grid-upload {
