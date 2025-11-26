@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lokasi Cabang Syntegra - Mobile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        
+        /* Sembunyikan Scrollbar tapi tetap bisa di-scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Animasi Transisi Halus */
+        .fade-in { animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        :root {
+            --primary-yellow: #f1c40f; /* Warna kuning khas security */
+            --dark-bg: #1a1a1a;
+            --text-color: #333;
+        }
+
+        .services-section {
+            /* Menggunakan overlay gelap agar tulisan putih terbaca jelas */
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('https://jurnalsecurity.com/go/wp-content/uploads/2024/03/satpam-baris.jpg');
+            padding: 6rem 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Efek parallax */
+            position: relative;
+        }
+
+        /* Styling Header Section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+
+        .section-header h2 {
+            color: white;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            /* Garis bawah kuning di bawah judul */
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-yellow);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: #e0e0e0; /* Putih agak abu supaya tidak menyilaukan */
+            font-size: 1.1rem;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Grid Layout */
+        .services-grid {
+            display: grid;
+            /* Responsif: Menyesuaikan kolom otomatis */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Card Style */
+        .service-item {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden; /* Supaya gambar tidak keluar saat di-zoom */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            /* Aksen garis kuning di atas kartu */
+            border-top: 5px solid var(--primary-yellow);
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px); /* Efek melayang */
+            box-shadow: 0 20px 40px rgba(241, 196, 15, 0.2); /* Bayangan sedikit kuning */
+        }
+
+        /* Image Wrapper & Animation */
+        .img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Efek Zoom in gambar saat hover */
+        .service-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Content Text dalam Card */
+        .service-content {
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Memastikan tinggi kartu sama */
+            justify-content: space-between;
+        }
+
+        .service-item h3 {
+            color: var(--text-color);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        /* Tombol Detail */
+        .btn-service {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: var(--dark-bg);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            align-self: center; /* Posisi tengah */
+        }
+
+        .btn-service:hover {
+            background-color: var(--primary-yellow);
+            color: black;
+            box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 pb-10">
+
+    <div class="bg-white p-5 pb-2">
+        <h1 class="text-2xl font-bold text-gray-900 leading-tight">Jaringan Kantor</h1>
+        <p class="text-sm text-gray-500 mt-1">Pilih lokasi cabang di bawah ini</p>
+    </div>
+
+    <div class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+        <div id="tab-container" class="flex overflow-x-auto hide-scroll px-4 py-3 gap-3 snap-x">
+            </div>
+        <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto animate-fade" id="content-area">
+        
+        <div class="relative w-full h-[280px] md:h-[400px] bg-gray-200">
+            <iframe 
+                id="map-iframe"
+                class="absolute inset-0 w-full h-full"
+                frameborder="0" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div id="map-loading" class="absolute inset-0 bg-gray-100 flex items-center justify-center">
+                <i class="fas fa-circle-notch fa-spin text-gray-400 text-2xl"></i>
+            </div>
+        </div>
+
+        <div class="bg-white px-5 py-6 rounded-b-2xl shadow-sm mb-4">
+            
+            <div class="mb-6">
+                <span class="bg-yellow-100 text-yellow-700 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Selected Branch</span>
+                <h2 class="text-xl font-bold text-gray-900 mt-2 leading-snug" id="branch-name">Loading...</h2>
+            </div>
+
+            <div class="space-y-5">
+                
+                <div class="flex gap-4">
+                    <i class="fas fa-map-marker-alt text-yellow-500 text-xl mt-1 w-5 text-center"></i>
+                    <div>
+                        <h3 class="text-xs font-bold text-gray-400 uppercase">Alamat</h3>
+                        <p class="text-sm text-gray-700 leading-relaxed mt-1" id="branch-address">Loading...</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <i class="fas fa-envelope text-yellow-500 text-xl mt-1 w-5 text-center"></i>
+                    <div>
+                        <h3 class="text-xs font-bold text-gray-400 uppercase">Email</h3>
+                        <p class="text-sm text-gray-700 mt-1" id="branch-email">Loading...</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <i class="fas fa-phone text-yellow-500 text-xl mt-1 w-5 text-center"></i>
+                    <div>
+                        <h3 class="text-xs font-bold text-gray-400 uppercase">Telepon</h3>
+                        <p class="text-sm text-gray-700 mt-1" id="branch-phone">0800-1778889</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <i class="fas fa-clock text-yellow-500 text-xl mt-1 w-5 text-center"></i>
+                    <div>
+                        <h3 class="text-xs font-bold text-gray-400 uppercase">Jam Operasional</h3>
+                        <p class="text-sm text-gray-700 mt-1">Senin - Jumat: 09:00 - 18:00 WIB</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // DATA CABANG (Sama seperti sebelumnya)
+        const branches = [
+            {
+                id: 1,
+                name: "Tangerang Selatan (Pusat)",
+                address: "Komp. Ruko BSD Sektor VII, Jl. Pahlawan Seribu No.63 - 64 Blok RN, Wetan Tangerang, Kec. Serpong, Banten 15310",
+                phone: "08001778889", // Format angka murni untuk tel: link
+                displayPhone: "0800-1778889",
+                email: "ho@syntegra-services.com",
+                mapEmbedUrl: "https://www.google.com/maps/place/Syntegra+Services/data=!4m2!3m1!1s0x0:0xb50ed5c26715e82b?sa=X&ved=1t:2428&ictx=111", // Contoh Embed Dummy
+                mapLink: "https://goo.gl/maps/xyz"
+            },
+            {
+                id: 2,
+                name: "Jakarta Selatan",
+                address: "Gedung Cyber 2 Tower, Jl. H. R. Rasuna Said No.X5, Kuningan, Jakarta Selatan, 12950",
+                phone: "021555001",
+                displayPhone: "0800-1778889",
+                email: "jkt@syntegra-services.com",
+                mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.28317765411!2d106.7585098!3d-6.229728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%20Selatan!5e0!3m2!1sen!2sid!4v1625555555555",
+                mapLink: "https://goo.gl/maps/xyz"
+            },
+            {
+                id: 3,
+                name: "Bandung",
+                address: "Jl. Asia Afrika No. 100, Bandung, Jawa Barat 40111",
+                phone: "0224445555",
+                displayPhone: "(022) 444-5555",
+                email: "bdg@syntegra-services.com",
+                mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.56347862!2d107.573117!3d-6.903444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung!5e0!3m2!1sen!2sid!4v1625555555555",
+                mapLink: "https://goo.gl/maps/xyz"
+            },
+            {
+                id: 4,
+                name: "Surabaya",
+                address: "Jl. Tunjungan No. 1, Surabaya, Jawa Timur 60275",
+                phone: "0319998888",
+                displayPhone: "(031) 999-8888",
+                email: "sby@syntegra-services.com",
+                mapEmbedUrl: "https://maps.google.com/maps?q=Surabaya&t=&z=13&ie=UTF8&iwloc=&output=embed",
+                mapLink: "https://goo.gl/maps/xyz"
+            },
+            { id: 5, name: "Semarang", address: "Jl. Pemuda No. 150, Semarang", phone: "0243332222", displayPhone: "(024) 333-2222", email: "smg@syntegra.com", mapEmbedUrl: "https://maps.google.com/maps?q=Semarang&t=&z=13&ie=UTF8&iwloc=&output=embed", mapLink: "#" },
+            { id: 6, name: "Medan", address: "Jl. Putri Hijau No. 10, Medan", phone: "0617776666", displayPhone: "(061) 777-6666", email: "mdn@syntegra.com", mapEmbedUrl: "https://maps.google.com/maps?q=Medan&t=&z=13&ie=UTF8&iwloc=&output=embed", mapLink: "#" },
+            { id: 7, name: "Makassar", address: "Jl. Jend. Sudirman No. 50, Makassar", phone: "04112221111", displayPhone: "(0411) 222-1111", email: "mks@syntegra.com", mapEmbedUrl: "https://maps.google.com/maps?q=Makassar&t=&z=13&ie=UTF8&iwloc=&output=embed", mapLink: "#" },
+            { id: 8, name: "Bali", address: "Jl. Teuku Umar No. 88, Denpasar", phone: "03618889999", displayPhone: "(0361) 888-9999", email: "dps@syntegra.com", mapEmbedUrl: "https://maps.google.com/maps?q=Denpasar&t=&z=13&ie=UTF8&iwloc=&output=embed", mapLink: "#" },
+            { id: 9, name: "Balikpapan", address: "Jl. Jenderal Sudirman No. 45", phone: "05421234567", displayPhone: "(0542) 123-4567", email: "bpn@syntegra.com", mapEmbedUrl: "https://maps.google.com/maps?q=Balikpapan&t=&z=13&ie=UTF8&iwloc=&output=embed", mapLink: "#" }
+        ];
+
+        const tabContainer = document.getElementById('tab-container');
+        const contentArea = document.getElementById('content-area');
+        let activeIndex = 0;
+
+        function renderTabs() {
+            tabContainer.innerHTML = ''; 
+
+            branches.forEach((branch, index) => {
+                const btn = document.createElement('button');
+                
+                // Style Tombol Mobile: Pill Shape
+                const isActive = index === activeIndex;
+                const activeStyle = "bg-gray-900 text-white border-gray-900 shadow-md";
+                const inactiveStyle = "bg-white text-gray-500 border-gray-200 hover:border-gray-300";
+                
+                btn.className = `snap-start flex-shrink-0 px-5 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${isActive ? activeStyle : inactiveStyle}`;
+                btn.innerText = branch.name;
+                
+                btn.onclick = () => {
+                    switchBranch(index);
+                    // Auto scroll tab supaya tombol yang diklik ke tengah (UX bagus buat mobile)
+                    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                };
+                
+                tabContainer.appendChild(btn);
+            });
+        }
+
+        function switchBranch(index) {
+            activeIndex = index;
+            const data = branches[index];
+            renderTabs();
+
+            // Efek Fade In sederhana pada konten
+            contentArea.classList.remove('fade-in');
+            void contentArea.offsetWidth; // Trigger reflow
+            contentArea.classList.add('fade-in');
+
+            // Update Konten
+            document.getElementById('branch-name').innerText = data.name;
+            document.getElementById('branch-address').innerText = data.address;
+            
+            // Update Action Buttons
+            document.getElementById('btn-call').href = `tel:${data.phone}`;
+            document.getElementById('btn-email').href = `mailto:${data.email}`;
+            document.getElementById('btn-email').innerText = `Email: ${data.email}`;
+            document.getElementById('btn-maps').href = data.mapLink;
+
+            // Handle Map Loading (Supaya tidak blank putih lama)
+            const mapLoader = document.getElementById('map-loading');
+            const iframe = document.getElementById('map-iframe');
+            
+            mapLoader.classList.remove('hidden'); // Show loader
+            iframe.src = data.mapEmbedUrl;
+            
+            iframe.onload = () => {
+                mapLoader.classList.add('hidden'); // Hide loader saat map selesai loading
+            };
+        }
+
+        // Init
+        switchBranch(0);
+
+    </script>
+</body>
+</html>

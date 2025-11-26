@@ -13,6 +13,9 @@
     --border-color: #e0e0e0;
     --color-gold: #D4AF37;
     --color-black: #1a1a1a;
+    --primary-yellow: #f1c40f; /* Warna kuning khas security */
+    --dark-bg: #1a1a1a;
+    --text-color: #333;
 }
 
 * {
@@ -334,73 +337,137 @@ body {
 
 /* -- Bagian Layanan -- */
 .services-section {
-    background-image: linear-gradient(to bottom, rgba(251, 255, 4, 0.745), rgba(72, 72, 72, 0.653)), url('https://jurnalsecurity.com/go/wp-content/uploads/2024/03/satpam-baris.jpg');
+    /* Menggunakan overlay gelap agar tulisan putih terbaca jelas */
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('https://jurnalsecurity.com/go/wp-content/uploads/2024/03/satpam-baris.jpg');
     padding: 6rem 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; /* Efek parallax */
-    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    position: relative;
 }
 
-.services-section h2 {
+/* Styling Header Section */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.section-header h2 {
     color: white;
     font-size: 2.8rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Garis bawah kuning di bawah judul */
+    position: relative;
+    display: inline-block;
 }
 
-.services-section p {
-    margin-top: 20px;
-    color: white;
-    font-size: 1.2rem;
-    width: 90%;
-    max-width: 900px; /* Batasi lebar agar mudah dibaca */
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.7;
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-yellow);
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
+.section-header p {
+    color: #e0e0e0; /* Putih agak abu supaya tidak menyilaukan */
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Grid Layout */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min-width disesuaikan */
+    /* Responsif: Menyesuaikan kolom otomatis */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    text-align: center;
-    margin-top: 40px;
     width: 90%;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
+/* Card Style */
 .service-item {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden; /* Supaya gambar tidak keluar saat di-zoom */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: var(--white-color);
-    padding: 30px;
-    border-radius: 20px; /* Lebih halus */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Aksen garis kuning di atas kartu */
+    border-top: 5px solid var(--primary-yellow);
 }
 
 .service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-10px); /* Efek melayang */
+    box-shadow: 0 20px 40px rgba(241, 196, 15, 0.2); /* Bayangan sedikit kuning */
+}
+
+/* Image Wrapper & Animation */
+.img-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
 }
 
 .service-item img {
-    width: 100%; /* Lebar penuh agar responsif */
-    height: 200px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+/* Efek Zoom in gambar saat hover */
+.service-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Content Text dalam Card */
+.service-content {
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Memastikan tinggi kartu sama */
+    justify-content: space-between;
 }
 
 .service-item h3 {
-    color: var(--dark-color);
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Tombol Detail */
+.btn-service {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--dark-bg);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    align-self: center; /* Posisi tengah */
+}
+
+.btn-service:hover {
+    background-color: var(--primary-yellow);
+    color: black;
+    box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
 }
 
 /* Sisa CSS Anda tetap sama... */
@@ -450,13 +517,13 @@ body {
 
 .logo-slide-track {
     display: flex;
-    width: calc(250px * 30);
+    width: calc(250px * 37); /* Jumlah total slide */
     animation: scroll 30s linear infinite;
 }
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-250px * 30)); }
+    100% { transform: translateX(calc(-250px * 37)); }
 }
 
 .slide {
@@ -1146,7 +1213,7 @@ footer {
 .form-container-wrapper {
     background: #111;
     color: #fff;
-    padding: 3rem;
+    padding: 3rem;  
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     text-align: center;
@@ -1239,7 +1306,7 @@ footer {
     position: absolute;
     top: 10px;
     left: 0;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255);
     transition: all 0.3s ease;
     pointer-events: none;
 }
@@ -1249,7 +1316,7 @@ footer {
 .form-group textarea:valid + label {
     top: -15px;
     font-size: 0.8rem;
-    color: #D4AF37;
+    color: #ffffff;
 }
 .form-group input:focus,
 .form-group textarea:focus,
@@ -1428,7 +1495,7 @@ label.label-select {
     top: -10px;
     padding: 0 5px;
     font-size: 0.8em;
-    color: #D4AF37;
+    color: #ffffff;
 }
 
 /* --- Mobile (max-width: 768px) --- */

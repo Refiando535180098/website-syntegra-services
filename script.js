@@ -205,4 +205,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+    // Mengambil file footer-contact.html dan memasukkannya ke div
+    fetch('index.html')
+        .then(response => response.text())
+        .then(data => {document.getElementById('footer-placeholder').innerHTML = data;});
 });
