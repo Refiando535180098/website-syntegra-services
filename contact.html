@@ -8,11 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="contact-page">
@@ -21,15 +20,18 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo-group">
-                    <img src="img/Logo_sws-removebg-preview.png" style="max-height: 50px;" alt="Logo SYNTEGRA SERVICES">
+                    <img src="img/Logo_sws-removebg-preview.png" 
+                         style="max-height: 50px;"
+                         alt="Logo SYNTEGRA SERVICES">
                     <a href="index.html" class="logo">SYNTEGRA SERVICES</a>
                 </div>
 
                 <ul class="nav-links">
-                    <li><a href="index.html">Home Page</a></li>
-                    <li><a href="services.html">Our Services</a></li>
-                    <li><a href="index.html#galeri">Our Documentations</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="index.html">Halaman Utama</a></li>
+                    <li><a href="services.html">Layanan Kami</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="index.html#galeri">Dokumentasi Kami</a></li>
+                    <li><a href="contact.html">Hubungi Kami</a></li>
                 </ul>
 
                 <div class="menu-toggle">
@@ -43,10 +45,10 @@
 
     <div class="sidebar" style="text-align: center;">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="index.html">Home Page</a>
-        <a href="services.html">Our Services</a>
-        <a href="index.html#galeri">Our Documentations</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="index.html">Halaman Utama</a>
+        <a href="services.html">Layanan Kami</a>
+        <a href="index.html#galeri">Dokumentasi Kami</a>
+        <a href="contact.html">Hubungi Kami</a>
     </div>
 
     <main>
@@ -57,6 +59,86 @@
                 <p class="hero-subtitle">Kami siap membantu Anda. Temukan lokasi kami, ajukan pertanyaan, atau bergabunglah dengan tim kami.</p>
             </div>
         </section>
+
+    <div class="z-40 backdrop-blur-sm border-b border-gray-100 shadow-sm pb-1">
+        <section id="info-maps-section" class="content-section">
+        <div class="container">
+            <h2 style="text-align: left;">Informasi Kontak</h2>
+            <p style="text-align: justify;">Jangan ragu untuk menghubungi kami melalui detail di bawah ini atau kunjungi kantor kami.</p>
+        </div>
+        </section>
+        <div class="relative w-full">
+            <div id="tab-scroll-container" class="flex overflow-x-auto no-scrollbar py-3 px-5 gap-3 snap-x scroll-smooth items-center">
+                </div>
+
+            <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+        </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-4 mt-4" id="main-content">
+        
+        <div class="bg-white rounded-[24px] shadow-xl shadow-gray-200/50 overflow-hidden border border-white content-animate">
+            
+            <div class="relative h-[250px] w-full bg-gray-100 group">
+                <iframe 
+                    id="map-iframe"
+                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+                    frameborder="0" allowfullscreen loading="lazy">
+                </iframe>
+                
+                <div id="map-loader" class="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
+                    <i class="fas fa-spinner fa-spin text-gray-400 text-2xl"></i>
+                </div>
+
+                <a id="btn-fullscreen" href="#" target="_blank" class="absolute top-3 right-3 bg-white/90 backdrop-blur text-gray-800 p-2 rounded-full shadow-md hover:scale-110 transition btn-press">
+                    <i class="fas fa-expand text-sm"></i>
+                </a>
+            </div>
+
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-[10px] font-bold tracking-widest text-yellow-600 bg-yellow-100 px-2 py-1 rounded-md uppercase">Selected Branch</span>
+                        <h2 class="text-xl font-bold text-gray-900 mt-2" id="info-name">Loading...</h2>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-400">
+                            <i class="fas fa-map-pin"></i>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed font-medium" id="info-address">...</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-400">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed font-medium" id="info-phone">...</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-400">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed font-medium" id="info-mail">...</p>
+                    </div>
+                    <div class="flex gap-4 items-center">
+                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-400">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <p class="text-sm text-gray-600 font-medium">Senin - Jumat: 09:00 - 18:00</p>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <a id="btn-wa" href="#" target="_blank" class="btn-press flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm bg-gray-900 text-yellow-400 hover:bg-gray-800 shadow-lg shadow-gray-900/20 transition">
+                        <i class="fas fa-location-arrow"></i>
+                        <span>Petunjuk Arah</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <section id="info-maps-section" class="content-section">
             <div class="container">
@@ -249,9 +331,10 @@
             </div>
         </section>
 
+        <!-- Page Contact -->
         <section class="contact-section-tech">
             <div class="contact-left">
-                <h2>Get in Touch</h2>
+                <h2>Hubungi Kami</h2>
                 <p class="contact-subtitle">Kami siap membantu mewujudkan lingkungan yang aman dan produktif untuk Anda.</p>
                 
                 <div class="contact-info-group">

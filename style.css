@@ -1,5 +1,5 @@
 /* in style.css */
-
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
 /* -- Gaya Umum & Variabel Root -- */
 :root {
     --primary-color: #ffea00;
@@ -22,6 +22,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -1151,12 +1153,29 @@ footer {
     transform: translateX(5px);
 }
 
+/* Contact Page */
 .contact-page {
     background-color: #ffffff;
 }
 #info-maps-section {
     background-color: #f9f9f9;
 }
+
+/* 1. ANIMASI KONTEN MASUK */
+.content-animate {
+    animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+        
+@keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* 2. TOMBOL MODERN (Efek Tekan) */
+.btn-press:active {
+transform: scale(0.95);
+}
+
 .info-maps-grid {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
