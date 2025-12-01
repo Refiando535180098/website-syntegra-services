@@ -339,141 +339,174 @@ body {
 
 /* -- Bagian Layanan -- */
 .services-section {
-    /* Menggunakan overlay gelap agar tulisan putih terbaca jelas */
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('https://jurnalsecurity.com/go/wp-content/uploads/2024/03/satpam-baris.jpg');
-    padding: 6rem 0;
+    /* Background Gradient + Gambar */
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), url('https://jurnalsecurity.com/go/wp-content/uploads/2024/03/satpam-baris.jpg');
+    padding: 80px 0;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Efek parallax */
+    background-attachment: fixed;
     position: relative;
+}
+
+/* Container agar tidak terlalu lebar di layar besar */
+.container {
+    width: 90%;
+    max-width: 1280px; 
+    margin: 0 auto;
 }
 
 /* Styling Header Section */
 .section-header {
     text-align: center;
-    margin-bottom: 50px;
-    padding: 0 20px;
+    margin-bottom: 60px;
+    padding: 0 15px;
 }
 
 .section-header h2 {
     color: white;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    /* Garis bawah kuning di bawah judul */
     position: relative;
     display: inline-block;
 }
 
+/* Garis bawah kuning di judul */
 .section-header h2::after {
     content: '';
     display: block;
-    width: 60px;
+    width: 80px;
     height: 4px;
-    background: var(--primary-yellow);
-    margin: 10px auto 0;
+    background: #f1c40f; /* Warna Kuning Langsung */
+    margin: 15px auto 0;
     border-radius: 2px;
 }
 
 .section-header p {
-    color: #e0e0e0; /* Putih agak abu supaya tidak menyilaukan */
+    color: #e0e0e0;
     font-size: 1.1rem;
-    width: 100%;
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
     line-height: 1.8;
+    font-weight: 300;
 }
 
-/* Grid Layout */
+/* --- GRID LAYOUT UTAMA --- */
 .services-grid {
     display: grid;
-    /* Responsif: Menyesuaikan kolom otomatis */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Grid otomatis: menyesuaikan lebar layar, minimal lebar kartu 260px */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
     gap: 30px;
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+    align-items: stretch; /* Memaksa semua kartu punya tinggi yang sama */
 }
 
-/* Card Style */
+/* Style Kartu */
 .service-item {
     background-color: white;
-    border-radius: 15px;
-    overflow: hidden; /* Supaya gambar tidak keluar saat di-zoom */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Flexbox Column: Agar layout isi kartu bisa diatur vertikal */
     display: flex;
     flex-direction: column;
-    /* Aksen garis kuning di atas kartu */
-    border-top: 5px solid var(--primary-yellow);
+    height: 100%; /* Mengisi penuh tinggi grid */
+    
+    border-top: 4px solid #f1c40f; /* Warna Kuning Langsung */
+    position: relative;
 }
 
 .service-item:hover {
-    transform: translateY(-10px); /* Efek melayang */
-    box-shadow: 0 20px 40px rgba(241, 196, 15, 0.2); /* Bayangan sedikit kuning */
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(241, 196, 15, 0.15);
 }
 
-/* Image Wrapper & Animation */
+/* Wrapper Gambar */
 .img-wrapper {
     width: 100%;
-    height: 220px;
+    height: 200px; /* Tinggi gambar dibuat fix */
     overflow: hidden;
+    position: relative;
+}
+
+/* Overlay gradient tipis di bawah gambar */
+.img-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
 }
 
 .service-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
-/* Efek Zoom in gambar saat hover */
 .service-item:hover img {
     transform: scale(1.1);
 }
 
-/* Content Text dalam Card */
+/* Konten Teks */
 .service-content {
     padding: 25px;
     text-align: center;
+    
+    /* Flexbox untuk konten: Mendorong tombol ke bawah */
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Memastikan tinggi kartu sama */
-    justify-content: space-between;
+    flex-grow: 1; 
 }
 
-.service-item h3 {
-    color: var(--text-color);
-    font-size: 1.3rem;
+.service-content h3 {
+    color: #333; /* Warna Teks Hitam Abu */
+    font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.4;
+    min-height: 3.5rem; /* Menjaga agar area judul tingginya seragam */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Tombol Detail */
+/* Tombol */
 .btn-service {
-    display: inline-block;
-    padding: 10px 25px;
-    background-color: var(--dark-bg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 30px;
+    background-color: #1a1a1a; /* Warna Background Gelap */
     color: white;
     text-decoration: none;
     border-radius: 50px;
+    font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.3s ease;
-    align-self: center; /* Posisi tengah */
+    
+    /* Mendorong tombol mentok ke bawah kartu */
+    margin-top: auto; 
+    align-self: center;
 }
 
 .btn-service:hover {
-    background-color: var(--primary-yellow);
-    color: black;
+    background-color: #f1c40f; /* Warna Kuning saat hover */
+    color: #111;
     box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
+    transform: translateY(-2px);
 }
 
-/* Sisa CSS Anda tetap sama... */
-/* ... (semua section lain hingga media query) ... */
+/* Slider logo section */
 .logo-slider-section {
     background-color: #f7f7f7;
     padding: 60px 0;

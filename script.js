@@ -205,63 +205,108 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-    // 
-    // DATA CABANG (9 LOKASI)
+    // DATA CABANG DENGAN LATITUDE & LONGITUDE
+        // Note: Silakan ganti angka lat/lng dengan koordinat asli kantor Anda.
         const branches = [
-            { id: 1, name: "Tangerang Selatan (HO)", 
-                     address: "Komp. Ruko BSD Sektor VII, Jl. Pahlawan Seribu No.63-64, Serpong, Tangsel.",
-                     phone: "08001778889",
-                     email: "ho@syntegra.com",
-                     mapEmbed: "https://maps.google.com/maps?q=Syntegra+BSD&t=&z=13&ie=UTF8&iwloc=&output=embed",
-                     mapLink: "https://goo.gl/maps/xyz" },
-            { id: 2, name: "Jakarta Selatan",
-                     address: "Gedung Cyber 2 Tower, Kuningan, Jakarta Selatan.",
-                     phone: "021555001",
-                     email: "jkt@syntegra.com",
-                     mapEmbed: "https://maps.google.com/maps?q=Cyber+2+Tower&t=&z=13&ie=UTF8&iwloc=&output=embed",
-                     mapLink: "https://goo.gl/maps/xyz" },
-            { id: 3, name: "Bandung",
-                     address: "Jl. Asia Afrika No. 100, Bandung, Jawa Barat.",
-                     phone: "022444555",
-                     email: "bdg@syntegra.com",
-                     mapEmbed: "https://maps.google.com/maps?q=Asia+Afrika+Bandung&t=&z=13&ie=UTF8&iwloc=&output=embed",
-                     mapLink: "https://goo.gl/maps/xyz" },
-            { id: 4, name: "Surabaya",
-                     address: "Jl. Tunjungan No. 1, Surabaya, Jawa Timur.",
-                     phone: "031999888",
-                     email: "sby@syntegra.com",
-                     mapEmbed: "https://maps.google.com/maps?q=Tunjungan+Surabaya&t=&z=13&ie=UTF8&iwloc=&output=embed",
-                     mapLink: "https://goo.gl/maps/xyz" },
-            { id: 5, name: "Semarang",
-                     address: "Jl. Pemuda No. 150, Semarang, Jawa Tengah.",
-                     phone: "024333222",
-                     email: "smg@syntegra.com",
-                     mapEmbed: "https://maps.google.com/maps?q=Pemuda+Semarang&t=&z=13&ie=UTF8&iwloc=&output=embed",
-                     mapLink: "https://goo.gl/maps/xyz" },
-            { id: 6, name: "Medan",
-                     address: "Jl. Putri Hijau No. 10, Medan, Sumut.",
-                     phone: "061777666",
-                     email: "mdn@syntegra.com",
-                     mapEmbed: "https://maps.google.com/maps?q=Medan+Putri+Hijau&t=&z=13&ie=UTF8&iwloc=&output=embed",
-                     mapLink: "https://goo.gl/maps/xyz" },
-            { id: 7, name: "Makassar",
-                     address: "Jl. Jend. Sudirman No. 50, Makassar, Sulsel.",
-                     phone: "0411222111",
-                     email: "mks@syntegra.com",
-                     mapEmbed: "https://maps.google.com/maps?q=Makassar+Sudirman&t=&z=13&ie=UTF8&iwloc=&output=embed",
-                     mapLink: "https://goo.gl/maps/xyz" },
-            { id: 8, name: "Bali (Denpasar)",
-                     address: "Jl. Teuku Umar No. 88, Denpasar, Bali.",
-                     phone: "0361888999",
-                     email: "dps@syntegra.com",
-                     mapEmbed: "https://maps.google.com/maps?q=Teuku+Umar+Bali&t=&z=13&ie=UTF8&iwloc=&output=embed",
-                     mapLink: "https://goo.gl/maps/xyz" },
-            { id: 9, name: "Balikpapan",
-                     address: "Jl. Jenderal Sudirman No. 45, Balikpapan.",
-                     phone: "0542123456",
-                     email: "bpn@syntegra.com",
-                     mapEmbed: "https://maps.google.com/maps?q=Balikpapan+Sudirman&t=&z=13&ie=UTF8&iwloc=&output=embed",
-                     mapLink: "https://goo.gl/maps/xyz" }
+            { 
+                id: 1, 
+                name: "HEAD OFFICE (BSD)", 
+                fullName: "HEAD OFFICE - PT. Satria Wira Sriwijaya",
+                address: "Komp. Ruko BSD Sektor VII, Jl. Pahlawan Seribu No.63 - 64 Blok RN, WetanTangerang, Kec. Serpong, Kota Tangerang Selatan, Banten 15310, Indonesia",
+                lat: -6.282194,
+                lng: 106.663528,
+                phone: "08001778889",
+                email: "ho@syntegra.com",
+                hours: "Senin - Jumat: 09:00 - 18:00"
+            },
+            { 
+                id: 2, 
+                name: "JABODETABEK REGION", 
+                fullName: "JABODETABEK REGION OFFICE",
+                address: "Mall of Indonesia Lt. 2 Unit 2 F/A7B JL. Boulevard Barat Raya No. 1 Kelapa Gading Jakarta Utara 14240",
+                lat: -6.149500,
+                lng: 106.890600,
+                phone: "08001778889",
+                email: "ho@syntegra.com",
+                hours: "Senin - Jumat: 09:00 - 18:00"
+            },
+            { 
+                id: 3, 
+                name: "JAWA BARAT REGION",
+                fullName: "JAWA BARAT REGION OFFICE",
+                address: "Jl. Ciwaruga No.8B, Ciwaruga, Kec. Parongpong, Kota Bandung, Jawa Barat 40559",
+                lat: -6.868900, 
+                lng: 107.575000,
+                phone: "-",
+                email: "sws.jabar@syntegra-services.com",
+                hours: "Senin - Jumat: 09:00 - 18:00"
+            },
+            { 
+                id: 4, 
+                name: "JAWA TENGAH REGION",
+                fullName: "JAWA TENGAH REGION OFFICE",
+                address: "Dusun II, Wirogunan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57166",
+                lat: -7.540840068892038, 
+                lng: 110.71914771529245,
+                phone: "085702300910",
+                email: "sws.jateng@syntegra-services.com",
+                hours: "Senin - Jumat: 09:00 - 18:00"
+            },
+            { 
+                id: 5, 
+                name: "JAWA TIMUR REGION",
+                fullName: "JAWA TIMUR REGION OFFICE",
+                address: "JL. Mangga Dua B8 - 8 Kel. Jagir Kec. Wonokromo Kota Surabaya Jawa Timur 60244",
+                lat: -7.300000, 
+                lng: 112.740000,
+                phone: "-",
+                email: "sws.jatim@syntegra-services.com",
+                hours: "Senin - Jumat: 09:00 - 18:00"
+            },
+            { 
+                id: 6, 
+                name: "SUMATERA UTARA REGION",
+                fullName: "SUMATERA UTARA REGION OFFICE",
+                address: "Jl. Amal No.44, Sunggal, Kec. Medan Sunggal, Kota Medan, Sumatera Utara 20127",
+                lat: 3.590000, 
+                lng: 98.650000,
+                phone: "-",
+                email: "sumateraregional@syntegra-services.com",
+                hours: "Senin - Jumat: 09:00 - 18:00"
+            },
+            { 
+                id: 7, 
+                name: "SUMATERA SELATAN REGION",
+                fullName: "SUMATERA SELATAN REGION OFFICE",
+                address: "JL. Sirna Raga Blok A2 Kel. 8 Ilir, Palembang Sumatera Selatan 30114",
+                lat: -2.960000, 
+                lng: 104.750000,
+                phone: "-",
+                email: "sws.sumsel@syntegra-services.com",
+                hours: "Senin - Jumat: 09:00 - 18:00"
+            },
+            { 
+                id: 8, 
+                name: "LAMPUNG REGION",
+                fullName: "LAMPUNG REGION OFFICE",
+                address: "JL. Terusan Riakudu Kel. Jatimulyo Kec. Jatiagung Kab. Lampung Selatan Lampung 35365",
+                lat: -5.350000, 
+                lng: 105.280000,
+                phone: "-",
+                email: "sws.lampung@syntegra-services.com",
+                hours: "Senin - Jumat: 09:00 - 18:00"
+            },
+            { 
+                id: 9, 
+                name: "BENGKULU REGION",
+                fullName: "BENGKULU REGION OFFICE",
+                address: "JL. Kapten Tendean Kec. Singaran Pati Kota Bengkulu Bengkulu 38224",
+                lat: -3.800000, 
+                lng: 102.260000,
+                phone: "-",
+                email: "sws.bengkulu@syntegra-services.com",
+                hours: "Senin - Jumat: 09:00 - 18:00"
+            },
         ];
 
         let activeIndex = 0;
@@ -278,37 +323,26 @@ document.addEventListener('DOMContentLoaded', function() {
             branches.forEach((branch, index) => {
                 const btn = document.createElement('button');
                 const isActive = index === activeIndex;
-
-                // DESIGN TOMBOL: Modern Pill Shape
-                // Active: Hitam Pekat + Text Kuning + Shadow
-                // Inactive: Putih + Border Tipis + Text Abu
-                const baseClass = "btn-press snap-center flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 border whitespace-nowrap";
-                const activeClass = "bg-gray-900 text-yellow-400 border-gray-900 shadow-md transform scale-100 ring-2 ring-offset-2 ring-gray-200";
-                const inactiveClass = "bg-white text-gray-500 border-gray-200 hover:border-gray-300 hover:bg-gray-50";
+                const baseClass = "snap-center flex-shrink-0 px-5 py-3 rounded-xl text-sm font-bold transition-all duration-300 border flex items-center justify-between group w-auto lg:w-full lg:text-left";
+                const activeClass = "bg-gray-900 text-yellow-400 border-gray-900 shadow-lg scale-[1.02] ring-2 ring-offset-2 ring-gray-200";
+                const inactiveClass = "bg-white text-gray-500 border-gray-200 hover:border-yellow-400 hover:text-gray-800 hover:bg-yellow-50 hover:pl-6";
 
                 btn.className = `${baseClass} ${isActive ? activeClass : inactiveClass}`;
-                btn.innerText = branch.name;
-                
-                // EVENT CLICK
+                btn.innerHTML = `
+                    <span class="truncate">${branch.name}</span>
+                    <i class="fas fa-chevron-right text-xs opacity-0 ${isActive ? 'opacity-100' : 'group-hover:opacity-100'} transition-opacity hidden lg:block"></i>
+                `;
                 btn.onclick = () => handleTabClick(index, btn);
-                
                 container.appendChild(btn);
             });
         }
 
         function handleTabClick(index, btnElement) {
-            if (activeIndex === index) return; // Jangan reload jika klik tab yang sama
-            
+            if (activeIndex === index) return;
             activeIndex = index;
-            renderTabs(); // Re-render untuk update style active
+            renderTabs(); 
             updateContent(index);
-
-            // LOGIKA SCROLL: Tombol otomatis ke tengah layar
-            btnElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'center'
-            });
+            btnElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         }
 
         function updateContent(index) {
@@ -316,34 +350,39 @@ document.addEventListener('DOMContentLoaded', function() {
             const contentCard = document.querySelector('.content-animate');
             const mapLoader = document.getElementById('map-loader');
             const iframe = document.getElementById('map-iframe');
+            const btnFullscreen = document.getElementById('btn-fullscreen');
 
-            // 1. Reset Animasi (Trick reflow CSS)
+            // Reset Animasi
             contentCard.style.animation = 'none';
-            contentCard.offsetHeight; /* trigger reflow */
-            contentCard.style.animation = 'slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+            contentCard.offsetHeight; 
+            contentCard.style.animation = 'slideIn 0.4s ease-out forwards';
 
-            // 2. Tampilkan Loader Map
-            mapLoader.classList.remove('hidden');
-            iframe.classList.add('opacity-50');
+            // Loader Map
+            mapLoader.classList.remove('opacity-0', 'pointer-events-none');
+            iframe.classList.add('opacity-0');
 
-            // 3. Update Text
-            document.getElementById('info-name').innerText = data.name;
+            // UPDATE INFO (TETAP PAKAI TEKS ALAMAT)
+            document.getElementById('info-name').innerText = data.fullName;
             document.getElementById('info-mail').innerText = data.email;
-            document.getElementById('info-address').innerText = data.address;
+            document.getElementById('info-address').innerText = data.address; // Text Alamat (bukan LatLong)
             document.getElementById('info-phone').innerText = data.phone;
-            document.getElementById('btn-fullscreen').href = data.mapLink;
+            document.getElementById('info-hours').innerText = data.hours;
 
-            // 4. Update Map dengan sedikit delay agar animasi smooth
+            // UPDATE MAP (PAKAI LAT & LONG)
+            // q = Latitude,Longitude
+            const mapCoords = `${data.lat},${data.lng}`;
+            const embedUrl = `https://maps.google.com/maps?q=${mapCoords}&z=15&output=embed`;
+            const directUrl = `https://www.google.com/maps/search/?api=1&query=${mapCoords}`;
+
             setTimeout(() => {
-                iframe.src = data.mapEmbed;
+                iframe.src = embedUrl;
                 iframe.onload = () => {
-                    mapLoader.classList.add('hidden');
-                    iframe.classList.remove('opacity-50');
+                    mapLoader.classList.add('opacity-0', 'pointer-events-none');
+                    iframe.classList.remove('opacity-0');
                 };
-            }, 100);
+            }, 200);
         }
 
-        // Jalankan saat load
         init();
 
     // Mengambil file footer-contact.html dan memasukkannya ke div

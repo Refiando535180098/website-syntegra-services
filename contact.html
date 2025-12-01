@@ -60,87 +60,100 @@
             </div>
         </section>
 
-    <div class="z-40 backdrop-blur-sm border-b border-gray-100 shadow-sm pb-1">
-        <section id="info-maps-section" class="content-section">
-        <div class="container">
-            <h2 style="text-align: left;">Informasi Kontak</h2>
-            <p style="text-align: justify;">Jangan ragu untuk menghubungi kami melalui detail di bawah ini atau kunjungi kantor kami.</p>
-        </div>
-        </section>
-        <div class="relative w-full">
-            <div id="tab-scroll-container" class="flex overflow-x-auto no-scrollbar py-3 px-5 gap-3 snap-x scroll-smooth items-center">
-                </div>
-
-            <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
-        </div>
-    </div>
-
-    <div class="max-w-3xl mx-auto px-4 mt-4" id="main-content">
+    <div class="max-w-7xl mx-auto px-4 py-8">
         
-        <div class="bg-white rounded-[24px] shadow-xl shadow-gray-200/50 overflow-hidden border border-white content-animate">
+        <div class="flex flex-col lg:flex-row gap-8 items-start">
             
-            <div class="relative h-[250px] w-full bg-gray-100 group">
-                <iframe 
-                    id="map-iframe"
-                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
-                    frameborder="0" allowfullscreen loading="lazy">
-                </iframe>
-                
-                <div id="map-loader" class="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
-                    <i class="fas fa-spinner fa-spin text-gray-400 text-2xl"></i>
+            <div class="w-full lg:w-1/3 flex-shrink-0 z-10">
+                <div class="sticky top-4">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 px-2 uppercase tracking-wider border-l-4 border-yellow-500 pl-3">
+                        Pilih Kantor Kami <br> (Klik untuk melihat detail)
+                    </h3>
+                    
+                    <div id="tab-scroll-container" class="flex lg:flex-col overflow-x-auto lg:overflow-visible gap-3 pb-4 lg:pb-0 no-scrollbar snap-x">
+                        </div>
+                    
+                    <div class="lg:hidden text-center text-xs text-gray-400 mt-2 animate-pulse">
+                        <i class="fas fa-arrow-left"></i> Geser <i class="fas fa-arrow-right"></i>
+                    </div>
                 </div>
-
-                <a id="btn-fullscreen" href="#" target="_blank" class="absolute top-3 right-3 bg-white/90 backdrop-blur text-gray-800 p-2 rounded-full shadow-md hover:scale-110 transition btn-press">
-                    <i class="fas fa-expand text-sm"></i>
-                </a>
             </div>
 
-            <div class="p-6">
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <span class="text-[10px] font-bold tracking-widest text-yellow-600 bg-yellow-100 px-2 py-1 rounded-md uppercase">Selected Branch</span>
-                        <h2 class="text-xl font-bold text-gray-900 mt-2" id="info-name">Loading...</h2>
+            <div class="w-full lg:w-2/3" id="main-content">
+                <div class="bg-white rounded-[24px] shadow-xl shadow-gray-200/50 overflow-hidden border border-white content-animate relative">
+                    
+                    <div class="relative h-[300px] lg:h-[400px] w-full bg-gray-100 group">
+                        <iframe 
+                            id="map-iframe"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+                            frameborder="0" 
+                            allowfullscreen 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        
+                        <div id="map-loader" class="absolute inset-0 flex items-center justify-center bg-gray-100 z-10 transition-opacity duration-300">
+                            <div class="text-center">
+                                <i class="fas fa-circle-notch fa-spin text-yellow-500 text-3xl mb-2"></i>
+                                <p class="text-gray-500 text-sm">Memuat Peta...</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="space-y-4">
-                    <div class="flex gap-4 items-start">
-                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-400">
-                            <i class="fas fa-map-pin"></i>
+                    <div class="p-6 lg:p-8">
+                        <div class="mb-6 border-b border-gray-100 pb-4">
+                            <span class="text-[10px] font-bold tracking-widest text-yellow-600 bg-yellow-100 px-2 py-1 rounded-md uppercase">Kantor Terpilih</span>
+                            <h2 class="text-2xl font-bold text-gray-900 mt-3 leading-tight" id="info-name">Loading...</h2>
                         </div>
-                        <p class="text-sm text-gray-600 leading-relaxed font-medium" id="info-address">...</p>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-400">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <p class="text-sm text-gray-600 leading-relaxed font-medium" id="info-phone">...</p>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-400">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <p class="text-sm text-gray-600 leading-relaxed font-medium" id="info-mail">...</p>
-                    </div>
-                    <div class="flex gap-4 items-center">
-                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-400">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <p class="text-sm text-gray-600 font-medium">Senin - Jumat: 09:00 - 18:00</p>
-                    </div>
-                </div>
 
-                <div class="mt-8">
-                    <a id="btn-wa" href="#" target="_blank" class="btn-press flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm bg-gray-900 text-yellow-400 hover:bg-gray-800 shadow-lg shadow-gray-900/20 transition">
-                        <i class="fas fa-location-arrow"></i>
-                        <span>Petunjuk Arah</span>
-                    </a>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="md:col-span-2 flex gap-4 items-start p-3 hover:bg-gray-50 rounded-lg transition">
+                                <div class="w-10 h-10 rounded-full bg-yellow-50 flex items-center justify-center flex-shrink-0 text-yellow-600 shadow-sm border border-yellow-100">
+                                    <i class="fas fa-map-pin text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 font-bold uppercase mb-1">Alamat</p>
+                                    <p class="text-sm text-gray-700 leading-relaxed font-medium" id="info-address">...</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 items-start p-3 hover:bg-gray-50 rounded-lg transition">
+                                <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 text-blue-600 shadow-sm border border-blue-100">
+                                    <i class="fas fa-phone-alt text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 font-bold uppercase mb-1">Telepon</p>
+                                    <p class="text-sm text-gray-700 font-medium" id="info-phone">...</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 items-start p-3 hover:bg-gray-50 rounded-lg transition">
+                                <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-green-600 shadow-sm border border-green-100">
+                                    <i class="fas fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 font-bold uppercase mb-1">Email</p>
+                                    <p class="text-sm text-gray-700 font-medium break-all" id="info-mail">...</p>
+                                </div>
+                            </div>
+
+                            <div class="md:col-span-2 flex gap-4 items-start p-3 hover:bg-gray-50 rounded-lg transition">
+                                <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 text-purple-600 shadow-sm border border-purple-100">
+                                    <i class="fas fa-clock text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 font-bold uppercase mb-1">Jam Operasional</p>
+                                    <p class="text-sm text-gray-700 font-medium" id="info-hours">...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-        <section id="info-maps-section" class="content-section">
+        <!-- <section id="info-maps-section" class="content-section">
             <div class="container">
                 <div class="info-maps-grid">
                     <div class="contact-details"> 
@@ -190,7 +203,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         
         <section id="form-section" class="content-section">
             <div class="container">
