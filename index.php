@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNTEGRA SERVICES | Halaman Utama</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <?php include 'nav.php'; ?>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <h1><strong>S</strong>IGNATURE SERVICES <br> for <br> <strong>EXCELLENCE</strong></h1>
+                    <a href="#layanan" class="cta-button-home-service">LAYANAN TERBAIK KAMI</a>
+                </div>
+        </section>
+
+        <section id="tentang" class="content-section">
+            <div class="container">
+                <div class="tentang-wrapper">        
+                    <div class="tentang-text">
+                        <h2>About Us</h2>
+                        <p style="text-align: justify;">
+                            SYNTEGRA SERVICES merupakan Perusahaan yang lahir dari pengembangan dan pembaharuan manajemen PT. Satria Wira Sriwijaya yang telah berdiri sejak 2012. Dengan peningkatan dan penyesuaian standard operating procedure melalui sistem dan peralatan yang berteknologi modern, maka hasil kinerja Perusahaan menjadi lebih efektif dan efisien.
+                        </p>
+                        <a href="about.html" id="button-tentang" class="btn-selengkapnya">SELENGKAPNYA</a>
+                    </div>
+
+                    <div class="tentang-image" style="display: flex; margin:0 auto; max-height: 400px; max-width: fit-content;">
+                        <img src="img/Logo_sws-removebg-preview.png" alt="Kamera CCTV Keamanan">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            <!-- <div class="services-section">
+                <div id="layanan" class="container">
+                    <h2 style="color: white; font-size: 2rem;">Our Services</h2>
+                    <p style="margin-top: 20px; text-align: justify; color: white; font-size: 1.2rem;">
+                        Sebagai Badan Usaha Jasa Pengamanan (BUJP) resmi dan terpercaya, PT. Satria Wira Sriwijaya (<strong>SYNTEGRA SERVICES</strong>) berkomitmen untuk menyediakan solusi keamanan terpadu dan layanan pendukung profesional untuk melindungi aset berharga serta menjaga kelancaran operasional bisnis Anda.
+                    </p>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <h3>Syntegra Security Services</h3>
+                            <img src="img/Doc1.jpeg" alt="Security Services">
+                            <a href="services.html#security" class="btn-service">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="service-item">
+                            <h3>Syntegra Labour Supply (SLS)</h3>
+                            <img src="img/LS2.jpeg" alt="Labour Supply">
+                            <a href="services.html#labour" class="btn-service">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="service-item">
+                            <h3>Syntegra Cleaning Service (SCS)</h3>
+                            <img src="img/CS1.jpg" alt="Cleaning Service">
+                            <a href="services.html#cleaning" class="btn-service">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="service-item">
+                            <h3>Syntegra Parking Service (SPS)</h3>
+                            <img src="img/parking.png" alt="Parking Service">
+                            <a href="services.html#parking" class="btn-service">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        <section class="content-section">
+            <div class="services-section">
+                <div id="layanan" class="container">
+                    <div class="section-header">
+                        <h2>Our Services</h2>
+                        <p>
+                            Sebagai Badan Usaha Jasa Pengamanan (BUJP) resmi dan terpercaya, PT. Satria Wira Sriwijaya (<strong>SYNTEGRA SERVICES</strong>) berkomitmen untuk menyediakan solusi keamanan terpadu dan layanan pendukung profesional untuk melindungi aset berharga serta menjaga kelancaran operasional bisnis Anda.
+                        </p>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <div class="img-wrapper">
+                                <img src="img/Doc1.jpeg" alt="Security Services">
+                            </div>
+                            <div class="service-content">
+                                <h3>Syntegra Security Services</h3>
+                                <a href="services.html#security" class="btn-service">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="img-wrapper">
+                                <img src="img/LS2.jpeg" alt="Labour Supply">
+                            </div>
+                            <div class="service-content">
+                                <h3>Syntegra Labour Supply (SLS)</h3>
+                                <a href="services.html#labour" class="btn-service">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="img-wrapper">
+                                <img src="img/CS1.jpg" alt="Cleaning Service">
+                            </div>
+                            <div class="service-content">
+                                <h3>Syntegra Cleaning Service (SCS)</h3>
+                                <a href="services.html#cleaning" class="btn-service">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="img-wrapper">
+                                <img src="img/parking.png" alt="Parking Service">
+                            </div>
+                            <div class="service-content">
+                                <h3>Syntegra Parking Service (SPS)</h3>
+                                <a href="services.html#parking" class="btn-service">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <button id="backToTopBtn" title="Kembali ke atas">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="up-circle" class="icon glyph" fill="#000000" stroke="#000000" stroke-width="0.00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm3.71,11.71a1,1,0,0,1-1.42,0L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3A1,1,0,0,1,15.71,13.71Z" style="fill:#231f20"></path></g></svg>
+        </button>
+
+        <div class="logo-slider-section">
+            <h2>Our Partners</h2>
+            <div class="logo-slider">
+                <div class="logo-slide-track">
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxPdGdONCJJtELnK5baJSgSoZHL64Dfg299g&s" alt="Ching Lhu"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1lWQrxROdg54eM0eQP9byVY3zS_dsyD_7nA&s" alt="Petronas"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR98Hio8HZIqkTleEb78jz8kUXwLBlncsUgeA&s" alt="Pertamina phe wmo"></div>
+                    <div class="slide"><img src="https://www.adetex.co.id/wp-content/uploads/2018/09/adetex-logo-tupai.png" alt="Tupai Adyamas"></div>
+                    <div class="slide"><img src="https://iconlogovector.com/uploads/images/2024/04/lg-66126cb58ad8a-WINGSFOOD-WINGS-FOOD.webp" alt="Wings Food"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFWB1X8ZOTof9WjhfyjO4OiNikYjMDDlh3Kw&s" alt="Sinarmas Mining"></div>
+                    <div class="slide"><img src="https://images.glints.com/unsafe/glints-dashboard.oss-ap-southeast-1.aliyuncs.com/company-logo/2fa045d1cc0e612b3bd75e1adf273b39.png" alt="Js Corp"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt7uhkzLWpZAxIjEtxo9L6e6JUYGm6Vpn4_Q&s" alt="Pertamina Geothermal"></div>
+                    <div class="slide"><img src="https://marketplace.oramiland.com/media/brand-image/ac-w1w2mar-landingpage-ramadanspesial_logo-sogood-rev.jpg" alt="So Good Food"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJNNxYGjGSvC4RI8D7ZSl0v7XLDWIXYLkp5g&s" alt="SKK Migas"></div>
+                    <div class="slide"><img src="https://energycouncil.com/wp-content/uploads/CNOOC-1.png" alt="CNOOC"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR4VXYT5IplY7-Q0a1KvFXAIEe4LpLT-nCJA&s" alt="Spr Langgak"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW1yHNPsQP9HgVQQlu1GT4zsoIkLR6xuDLnQ&s" alt="SRMD"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7nMc5dZxLQ2KJyD_4bQvaJrm_sZVieWxzNw&s" alt="Kalbe"></div>
+                    <div class="slide"><img src="https://qstechno.com/wp-content/uploads/2019/10/Corelab-Logo.png" alt="Core Lab"></div>
+                    <div class="slide"><img src="https://www.news.infosawit.com/images/news/January-2015/ptpn-iv-menanti-sertifikat-ispo-/ptpn-iv-menanti-sertifikat-ispo-.jpg" alt="PTPN 4"></div>
+                    <div class="slide"><img src="https://media.licdn.com/dms/image/v2/C4D0BAQE2J6SO1IfhDw/company-logo_200_200/company-logo_200_200/0/1631332942100?e=2147483647&v=beta&t=VlBpipyBlBrGP4fivD-78fYyQ5goMEADdlTAgMh1_1Y" alt="PTPN 7"></div>
+                    <div class="slide"><img src="https://lokerbumn.com/wp-content/uploads/2023/09/PT-Arara-Abadi-Sinarmas-Forestry-02.jpg" alt="Arara Abadi"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMVO8cQzQHB0TCmhQeNMPM2td7SVAcL7mA6A&s" alt="Adetex"></div>
+                    <div class="slide"><img src="https://storage.bkkbisa.net/company_logo/CFKISs3DhV8ZNbpZmULYe52bOcIfEw.jpg" alt="Glory"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_f21-MLiPaLYKK35DrW_sdF3Yf_6uYB1IUA&s" alt="Kejari"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8czPI3TXRTcArsulH9hv0sUY_BTpZ73inxg&s" alt="Sari roti"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFWB1X8ZOTof9WjhfyjO4OiNikYjMDDlh3Kw&s" alt="Sinarmas Mining"></div>
+                    <div class="slide"><img src="https://cdn-healthcare.hellohealthgroup.com/2023/04/1682476342_64488d36da25b8.65376503.jpg" alt="Mayapada Hospital"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0R6VlDZNRsgvF9-C3yacI6Dj5eHGJK6oDFA&s" alt="OT GROUP"></div>
+                    <div class="slide"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjITOkbejCP2cCBvxoUNvGvbnVuN8tBaajQaS8KXXjJfg1izJtFtfGOOcV10joeo6fBakLTqjJzAjzUCEdPT1WCPu0RI5c8BdYV85RJMIJ97ZPzzXU_aE_L42XXOKto0NJVoQM8ECYgPs-Ph3_bPeTRjoZKlPzsgA-Ll1d_xVtrj6SxgvhQsznkISTI/s320/GKL50_Garudafood%20-%20Koleksilogo.com.jpg" alt="Garudafood"></div>
+                    <div class="slide"><img src="https://sukandadjaya.com/wp-content/uploads/2016/12/logo-diamond-ic-500x500.png" alt="Diamond"></div>
+                    <div class="slide"><img src="https://smc.kino.co.id/storage/files/1/news/NEWS-753x420-PTKino-Indonesia-Tbk-dan-PT.jpg" alt="Kino"></div>
+                    <div class="slide"><img src="https://images.seeklogo.com/logo-png/40/2/siloam-hospitals-logo-png_seeklogo-405348.png" alt="Siloam Hospitals"></div>
+                    <div class="slide"><img src="https://play-lh.googleusercontent.com/m_s2bGJcx867RTUn4swHoqUraooqOOdCiZTV7xkkfrMO2rUkEKXAMao3e2VE24Zqlw" alt="Artaboga"></div>
+                    <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Sosro.svg" alt="Sosro"></div>
+                    <div class="slide"><img src="https://www.frisianflag.com/storage/app/media/logo-frisianflag-resize.png" alt="Frisian Flag"></div>
+                    <div class="slide"><img src="https://springhillpalembang.com/wp-content/uploads/2024/10/logo-spring-hill.webp" alt="Spring Hill"></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrsywpBnUJv2ddFkWLbQLoMTfMi00LiKnPow&s" alt="Japfa"></div>
+                    <div class="slide"><img src="https://www.midiatama.co.id/_next/image?url=https%3A%2F%2Fs3.miccapro.com%2Fupload%2Fold%2Fperusahaan%2F211229101110-download%20-%202021-12-29T101223.118.jpg&w=640&q=75" alt="Pungkook"></div>
+                    <div class="slide"><img src="img/logo1.jpeg" alt="Logo 1"></div>
+                    <div class="slide"><img src="img/logo2.jpeg" alt="Logo 2"></div>
+                    <div class="slide"><img src="img/logo3.jpeg" alt="Logo 3"></div>
+                    <div class="slide"><img src="img/logo4.jpeg" alt="Logo 4"></div>
+                    <div class="slide"><img src="img/logo5.jpeg" alt="Logo 5"></div>
+                    <div class="slide"><img src="img/logo6.jpeg" alt="Logo 6"></div>
+                    <div class="slide"><img src="img/logo7.jpeg" alt="Logo 7"></div>
+                    <div class="slide"><img src="img/logo8.jpeg" alt="Logo 8"></div>
+                </div>
+            </div>
+        </div>
+
+        <section id="partners" class="partners-section">
+            <div class="partners-container">
+            </div>
+        </section>
+
+        <section id="galeri" class="content-section">
+            <div class="container">
+                <h2>Our Documentations</h2>
+                <p>Lihat beberapa karya terbaik yang telah kami selesaikan untuk klien kami.</p>
+                <div class="swiper mySwiper" style="margin-top: 20px;">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="img/G1.jpeg" alt="Proyek 1"></div>
+                        <div class="swiper-slide"><img src="img/G2.jpeg" alt="Proyek 2"></div>
+                        <div class="swiper-slide"><img src="img/CS1.jpg" alt="Proyek 3"></div>
+                        <div class="swiper-slide"><img src="img/G3.jpeg" alt="Proyek 4"></div>
+                        <div class="swiper-slide"><img src="img/G4.jpeg" alt="Proyek 5"></div>
+                        <div class="swiper-slide"><img src="img/G5.jpeg" alt="Proyek 6"></div>
+                        <div class="swiper-slide"><img src="img/G6.jpeg" alt="Proyek 7"></div>
+                        <div class="swiper-slide"><img src="img/G7.jpeg" alt="Proyek 8"></div>
+                        <div class="swiper-slide"><img src="img/G8.jpeg" alt="Proyek 9"></div>
+                        <div class="swiper-slide"><img src="img/G9.jpeg" alt="Proyek 10"></div>
+                        <div class="swiper-slide"><img src="img/G10.jpeg" alt="Proyek 11"></div>
+                        <div class="swiper-slide"><img src="img/G11.jpeg" alt="Proyek 12"></div>
+                        <div class="swiper-slide"><img src="img/G12.jpeg" alt="Proyek 13"></div>
+                        <div class="swiper-slide"><img src="img/G13.jpeg" alt="Proyek 14"></div>
+                        <div class="swiper-slide"><img src="img/G14.jpeg" alt="Proyek 15"></div>
+                        <div class="swiper-slide"><img src="img/G15.jpeg" alt="Proyek 16"></div>
+                        <div class="swiper-slide"><img src="img/G16.JPG" alt="Proyek 17"></div>
+                        <div class="swiper-slide"><img src="img/G17.JPG" alt="Proyek 18"></div>
+                        <div class="swiper-slide"><img src="img/G18.JPG" alt="Proyek 19"></div>
+                        <div class="swiper-slide"><img src="img/G19.JPG" alt="Proyek 20"></div>
+                        <div class="swiper-slide"><img src="img/G20.JPG" alt="Proyek 21"></div>
+                        <div class="swiper-slide"><img src="img/LS2.jpeg" alt="Proyek 22"></div>
+                        <div class="swiper-slide"><img src="img/LS3.jpeg" alt="Proyek 23"></div>
+                        <div class="swiper-slide"><img src="img/CS1.jpg" alt="Proyek 24"></div>
+                        <div class="swiper-slide"><img src="img/CS4.jpeg" alt="Proyek 25"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontak Footer -->
+        <div class="contact-section-tech">
+            <div class="contact-left">
+                <h2>Get in Touch</h2>
+                <p class="contact-subtitle">Kami siap membantu mewujudkan lingkungan yang aman dan produktif untuk Anda.</p>
+                
+                <div class="contact-info-group">
+                    <h4><i class="fas fa-map-marker-alt"></i> Alamat Kantor</h4>
+                    <p>Komp. Ruko BSD Sektor VII, Jl. Pahlawan Seribu No.63 - 64 Blok RN, Kec. Serpong, Kota Tangerang Selatan, Banten 15310</p>
+                </div>
+                
+                <div class="contact-info-group">
+                    <h4><i class="fas fa-phone-alt"></i> Telepon Bebas Pulsa</h4>
+                    <p>0800-1-778889</p>
+                </div>
+
+                <div class="contact-info-group">
+                    <h4><i class="fas fa-envelope"></i> Email Utama</h4>
+                    <p>ho@syntegra-services.com</p>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <a href="tel:+628001778889" class="contact-action-card">
+                    <i class="fas fa-phone-volume"></i>
+                    <span>Call Us Now</span>
+                </a>
+                <!-- <a href="https://wa.me/+6289631174455" class="contact-action-card" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Chat on WhatsApp</span>
+                </a> -->
+                <a href="mailto:ho@syntegra-services.com" class="contact-action-card">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send an Email</span>
+                </a>
+
+                <div class="services-links">
+                    <h4>Layanan Kami</h4>
+                    <ul>
+                        <li><a href="services.html#security">Layanan Keamanan</a></li>
+                        <li><a href="services.html#labour">Penyedia Tenaga Kerja</a></li>
+                        <li><a href="services.html#cleaning">Layanan Kebersihan</a></li>
+                        <li><a href="services.html#parking">Layanan Parkir</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <?php include 'footer.php'; ?>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

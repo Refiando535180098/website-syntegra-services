@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNTEGRA SERVICES | Tentang Kami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="about-page">
+    
+    <?php include 'nav.php'; ?>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+            <h1>About Us</h1>
+            <p class="hero-subtitle">Pelajari lebih lanjut tentang perjalanan, nilai-nilai, dan komitmen kami terhadap keunggulan.</p>
+            </div>
+        </section>
+
+        <section class="about-content-section">
+            <div class="container">
+                <div class="about-story">
+                    <div class="about-text">
+                        <h2>Our Story: A Legacy of Excellence</h2>
+                        <p style="text-align: justify;">
+                            <strong>SYNTEGRA SERVICES</strong> merupakan Perusahaan yang lahir dari pengembangan dan pembaharuan manajemen PT. Satria Wira Sriwijaya yang telah berdiri sejak 2012. Dengan peningkatan dan penyesuaian standard operating procedure melalui sistem dan peralatan yang berteknologi modern, maka hasil kinerja Perusahaan menjadi lebih efektif dan efisien.
+                        </p>
+                        <p style="text-align: justify;">
+                            Kami menyediakan layanan yang disesuaikan dengan kebutuhan pelanggan di bidang manajemen keamanan, outsourcing (penyediaan tenaga kerja), dan layanan kebersihan, semuanya terintegrasi dalam "Layanan Manajemen Fasilitas."
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        
+                        <img src="img/Foto BOD 2.png" alt="Professional Team Meeting">
+                    </div>
+                </div>
+
+                <section class="milestone-section">
+                <section class="milestone-section-horizontal">
+                <div class="container-milestone">
+                    <h2 class="section-title">A Journey of Innovation</h2>
+                    <p class="section-subtitle">
+                        Geser untuk melihat evolusi kami dari waktu ke waktu.
+                    </p>
+                </div>
+
+                <div class="horizontal-timeline-wrapper">
+                    <div class="timeline-track">
+                        <div class="milestone-card">
+                            <div class="card-year">2012</div>
+                            <div class="card-content">
+                                <h3>SWS Didirikan</h3>
+                                <p>Satria Wira Sriwijaya (SWS) memulai perjalanannya sebagai fondasi utama.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="card-year">2013</div>
+                            <div class="card-content">
+                                <h3>Standarisasi Anggota</h3>
+                                <p>Mengimplementasikan pelatihan Gada Pratama untuk meningkatkan kualitas.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="card-year">2015</div>
+                            <div class="card-content">
+                                <h3>Ekspansi Layanan</h3>
+                                <p>Pengembangan Divisi Cleaning Service & Labour Supply untuk pasar yang lebih luas.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="card-year">2021</div>
+                            <div class="card-content">
+                                <h3>Era SYNTEGRA</h3>
+                                <p>Transformasi digital dengan sistem Adm Payroll (Talenta) & Keuangan (Accurate).</p>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="card-year">2022</div>
+                            <div class="card-content">
+                                <h3>Sistem Rekrutmen</h3>
+                                <p>Integrasi tes PAPI Kostick & DISC untuk standarisasi rekrutmen yang superior.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="card-year">2024</div>
+                            <div class="card-content">
+                                <h3>Inovasi SMART</h3>
+                                <p>Membangun Control Room modern dengan tim responsif yang beroperasi 24 jam.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="card-year">2025</div>
+                            <div class="card-content">
+                                <h3>Ekspansi Parking Service</h3>
+                                <p>Pengembangan Divisi Parking Service untuk meningkatkan efisiensi dan keamanan parkir.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+                <div class="about-values">
+                    <h2>Our Core Principles</h2>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <i class="fas fa-cogs"></i>
+                            <h3>SMART System</h3>
+                            <p style="text-align: justify;">
+                                Dengan <strong>Sistem Monitoring Aksi dan Reaksi Terpadu (SMART)</strong>, 
+                                kami tidak hanya bersaing, kami memimpin. Platform ini 
+                                mentransformasi dukungan operasional kami menjadi kekuatan 
+                                proaktif, memastikan setiap aksi dan reaksi dioptimalkan 
+                                untuk memberikan layanan superior yang melampaui harapan 
+                                pelanggan.
+                            </p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-handshake-angle"></i>
+                            <h3>Client Commitment</h3>
+                            <p style="text-align: justify;">
+                                <strong>SYNTEGRA SERVICES</strong> merupakan produk pelayanan yang disesuaikan dengan kebutuhan pelanggan, baik di sektor pengelolaan jasa keamanan, jasa alih daya (labour supply), jasa kebersihan (cleaning service)  yang berkaitan dengan "Facility Management Services".
+                            </p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-thumbs-up"></i>
+                            <h3>Peace of Mind</h3>
+                            <p style="text-align: justify;">
+                                Menjadi Mitra Strategis dalam 
+                                meningkatkan produktifitas, 
+                                efektifitas dan efisiensi biaya yang 
+                                didukung Sistem Digital untuk 
+                                memberikan Solusi yang bermutu 
+                                dan terstandarisasi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Visi misi dan goals -->
+                <div class="vision-mission-goals">
+
+                    <input type="radio" name="vmg-tabs" id="tab-visi" checked>
+                    <input type="radio" name="vmg-tabs" id="tab-misi">
+                    <input type="radio" name="vmg-tabs" id="tab-tujuan">
+                    <input type="radio" name="vmg-tabs" id="tab-nilai">
+
+                    <div class="vmg-tabs">
+                        <label for="tab-visi" class="vmg-tab">
+                            <i class="fas fa-eye"></i><span>Our Vision</span>
+                        </label>
+                        <label for="tab-misi" class="vmg-tab">
+                            <i class="fas fa-bullseye"></i><span>Our Mission</span>
+                        </label>
+                        <label for="tab-tujuan" class="vmg-tab">
+                            <i class="fas fa-tasks"></i><span>Our Goals</span>
+                        </label>
+                        <label for="tab-nilai" class="vmg-tab">
+                            <i class="fas fa-star"></i><span>Our Values</span>
+                        </label>
+                    </div>
+
+                    <div class="vmg-content-panels">
+                        <div id="panel-visi" class="vmg-panel">
+                            <h3>Menjadi yang Terpercaya dan Inovatif</h3>
+                            <p style="text-align: justify;">
+                                <strong>SYNTEGRA SERVICES</strong> berkomitmen untuk menjadi Mitra Strategis dalam 
+                                meningkatkan produktifitas, 
+                                efektifitas dan efisiensi biaya yang 
+                                didukung Sistem Digital untuk 
+                                memberikan Solusi yang bermutu 
+                                dan terstandarisasi.    
+                            </p>
+                        </div>
+                        <div id="panel-misi" class="vmg-panel">
+                            <h3>Memberikan Solusi Efektif dan Efisien</h3>
+                            <ul>
+                                <li><p style="text-align: justify;">Memberikan hasil optimal 
+                                    bagi pengguna jasa yang 
+                                    didukung oleh SDM yang 
+                                    handal, penerapan SOP 
+                                    dan digitalisasi. </p></li>
+                                <li><p style="text-align: justify;">Menciptakan kondisi aman dan 
+                                    nyaman bagi pengguna jasa melalui kemitraan yang saling 
+                                    menguntungkan.</p></li>
+                                <li><p style="text-align: justify;">Memberikan kepuasan bagi 
+                                    pengguna jasa melalui pertanggungjawaban yang berlandaskan 
+                                    Good Corporate Governance.</p></li>
+                            </ul>
+                        </div>
+                        <div id="panel-tujuan" class="vmg-panel">
+                            <h3>Membangun Kemitraan Strategis</h3>
+                            <p style="text-align: justify;">
+                                Mewujudkan Kemitraan Strategis jangka panjang yang terukur dan bernilai, berorientasi keunggulan profesionalisme, serta mengutamakan etika bisnis.
+                            </p>
+                        </div>
+                        <div id="panel-nilai" class="vmg-panel">
+                            <h3>Our Value</h3>
+                            <p style="text-align: center;">
+                                <strong>S</strong>atisfied Relationship
+                            </p>
+                            <p style="text-align: center;">
+                                <strong>W</strong>orthy People
+                            </p>
+                            <p style="text-align: center;">
+                                <strong>S</strong>ignature Services
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+    <?php include 'footer.php'; ?>
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</html>
