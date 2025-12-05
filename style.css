@@ -318,14 +318,16 @@ body {
 }
 
 .tentang-text h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
 }
 
 .tentang-text p {
     text-align: justify;
+    font-size: larger;
     line-height: 1.8; /* Sedikit lebih lega */
     margin-bottom: 20px;
+    margin-right: 80px;
 }
 
 .tentang-image img {
@@ -386,7 +388,8 @@ body {
 
 .section-header p {
     color: #e0e0e0;
-    font-size: 1.1rem;
+    text-align: justify;
+    font-size: 1.2rem;
     max-width: 750px;
     margin: 0 auto;
     line-height: 1.8;
